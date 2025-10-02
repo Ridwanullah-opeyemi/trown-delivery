@@ -1,0 +1,183 @@
+[
+    {
+      "id": 1,
+      "name": "Margherita Pizza",
+      "description": "Classic cheese and tomato pizza with fresh basil.",
+      "price": 4500,
+      "category": "Pizza",
+      "image": "/src/assets/images/ic-logo-00.webp",
+      "available": true
+    },
+    {
+      "id": 2,
+      "name": "Pepperoni Pizza",
+      "description": "Spicy pepperoni with mozzarella and tomato sauce.",
+      "price": 5000,
+      "category": "Pizza",
+      "image": "/public/image/logo.png",
+      "available": true
+    },
+    {
+      "id": 3,
+      "name": "Grilled Chicken Burger",
+      "description": "Juicy grilled chicken with lettuce and mayo.",
+      "price": 3200,
+      "category": "Burgers",
+      "image": "/images/burger-chicken.jpg",
+      "available": true
+    },
+    {
+      "id": 4,
+      "name": "Beef Burger",
+      "description": "Classic beef patty with cheddar and caramelized onions.",
+      "price": 3500,
+      "category": "Burgers",
+      "image": "/images/burger-beef.jpg",
+      "available": true
+    },
+    {
+      "id": 5,
+      "name": "French Fries",
+      "description": "Crispy golden fries with a side of ketchup.",
+      "price": 1500,
+      "category": "Sides",
+      "image": "/images/fries.jpg",
+      "available": true
+    },
+    {
+      "id": 6,
+      "name": "Chicken Shawarma",
+      "description": "Grilled chicken wrapped in pita with garlic sauce.",
+      "price": 2800,
+      "category": "Wraps",
+      "image": "/images/shawarma-chicken.jpg",
+      "available": true
+    },
+    {
+      "id": 7,
+      "name": "Vegetarian Shawarma",
+      "description": "Fresh veggies with hummus and tahini in a warm wrap.",
+      "price": 2600,
+      "category": "Wraps",
+      "image": "/images/shawarma-veggie.jpg",
+      "available": true
+    },
+    {
+      "id": 8,
+      "name": "Caesar Salad",
+      "description": "Crisp romaine, croutons, parmesan, Caesar dressing.",
+      "price": 3000,
+      "category": "Salads",
+      "image": "/images/salad-caesar.jpg",
+      "available": true
+    },
+    {
+      "id": 9,
+      "name": "Jollof Rice & Chicken",
+      "description": "Nigerian Jollof rice served with spicy grilled chicken.",
+      "price": 3800,
+      "category": "Main Dishes",
+      "image": "/images/jollof-chicken.jpg",
+      "available": true
+    },
+    {
+      "id": 10,
+      "name": "Fried Rice & Turkey",
+      "description": "Well-seasoned fried rice with peppered turkey.",
+      "price": 4200,
+      "category": "Main Dishes",
+      "image": "/images/friedrice-turkey.jpg",
+      "available": true
+    },
+    {
+      "id": 11,
+      "name": "Pounded Yam & Egusi Soup",
+      "description": "Traditional pounded yam with rich egusi soup.",
+      "price": 4000,
+      "category": "African",
+      "image": "/images/egusi-poundedyam.jpg",
+      "available": true
+    },
+    {
+      "id": 12,
+      "name": "Amala & Ewedu",
+      "description": "Yoruba classic meal served with beef and sauce.",
+      "price": 3800,
+      "category": "African",
+      "image": "/images/amala-ewedu.jpg",
+      "available": true
+    },
+    {
+      "id": 13,
+      "name": "Spring Rolls (2pcs)",
+      "description": "Crispy veggie spring rolls with sweet chili dip.",
+      "price": 1200,
+      "category": "Sides",
+      "image": "/images/spring-rolls.jpg",
+      "available": true
+    },
+    {
+      "id": 14,
+      "name": "Chapman Drink",
+      "description": "Refreshing Nigerian cocktail with Angostura bitters.",
+      "price": 1500,
+      "category": "Drinks",
+      "image": "/images/chapman.jpg",
+      "available": true
+    },
+    {
+      "id": 15,
+      "name": "Bottled Water",
+      "description": "500ml cold bottled drinking water.",
+      "price": 300,
+      "category": "Drinks",
+      "image": "/images/water.jpg",
+      "available": true
+    },
+    {
+      "id": 16,
+      "name": "Spaghetti & Meatballs",
+      "description": "Pasta in tomato sauce topped with meatballs.",
+      "price": 3700,
+      "category": "Main Dishes",
+      "image": "/images/spaghetti-meatballs.jpg",
+      "available": true
+    },
+    {
+      "id": 17,
+      "name": "Fish & Chips",
+      "description": "Deep-fried fish fillet served with fries.",
+      "price": 3900,
+      "category": "Main Dishes",
+      "image": "/images/fish-chips.jpg",
+      "available": true
+    },
+    {
+      "id": 18,
+      "name": "Grilled Tilapia",
+      "description": "Whole tilapia fish with spicy pepper sauce.",
+      "price": 4500,
+      "category": "Seafood",
+      "image": "/images/tilapia.jpg",
+      "available": true
+    },
+    {
+      "id": 19,
+      "name": "Shrimp Fried Rice",
+      "description": "Fried rice mixed with juicy shrimps.",
+      "price": 4200,
+      "category": "Seafood",
+      "image": "/images/shrimp-friedrice.jpg",
+      "available": true
+    },
+    {
+      "id": 20,
+      "name": "Chocolate Cake Slice",
+      "description": "Moist chocolate cake with ganache topping.",
+      "price": 1800,
+      "category": "Desserts",
+      "image": "/images/chocolate-cake.jpg",
+      "available": true
+    }
+  ]
+  
