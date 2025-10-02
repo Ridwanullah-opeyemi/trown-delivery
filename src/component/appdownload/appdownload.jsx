@@ -1,5 +1,5 @@
 import { assets } from '../../assets/assets'
-import './appDownload.css'
+import './appdownload.css'
 
 
 const AppDownload = () => {
