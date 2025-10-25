@@ -1,0 +1,134 @@
+/* Variables (You might put these in your global React CSS) */
+:root {
+    --orange-color: #FF9900;
+    --dark-color: #333333;
+    --light-gray: #f9f9f9;
+}
+
+/* --- Floating Icon --- */
+.chatbot-icon {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--orange-color);
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 1.8rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+
+.chatbot-icon:hover {
+    transform: scale(1.05);
+}
+
+/* --- Chat Window --- */
+.chat-window {
+    position: fixed;
+    bottom: 95px;
+    right: 25px;
+    width: 300px;
+    height: 400px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    /* Hidden state */
+    transform: scale(0); 
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-in-out;
+}
+
+.chat-window.open {
+    transform: scale(1); /* Open state */
+}
+
+.chat-header {
+    background-color: var(--orange-color);
+    color: white;
+    padding: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-chat {
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.chat-body {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: var(--light-gray);
+    display: flex; /* For alignment of messages */
+    flex-direction: column;
+}
+
+/* --- Chat Messages --- */
+.message {
+    padding: 8px 12px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    max-width: 80%;
+    line-height: 1.4;
+    font-size: 0.9rem;
+}
+
+.bot-message {
+    background-color: #e2f0ff; /* Light Blue */
+    color: var(--dark-color);
+    align-self: flex-start;
+}
+
+.user-message {
+    background-color: var(--orange-color);
+    color: white;
+    align-self: flex-end;
+    margin-left: auto; /* Pushes user message to the right */
+}
+
+/* --- Chat Input --- */
+.chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+.chat-input button {
+    background-color: var(--orange-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.chat-input button:hover {
+    background-color: #cc7a00;
+}

@@ -4,6 +4,7 @@ import add_icon_white from './add_icon_white.png'
 import remove_icon_red from './remove_icon_red.png'
 import add_icon_green from './add_icon_green.png'
 import order_icon from './order_icon.png'
+import logout_icon from './logout_icon.png'
 import profile_image from './profile_image.png'
 import upload_area from './upload_area.png'
 import facebook_icon from './facebook_icon.png'
@@ -26,20 +27,25 @@ import food_1 from './food_1.png'
 import play_store from './play_store.png'
 import app_store from './app_store.png'
 import food_2 from './food_2.png'
+import profile_icon from './profile_icon.png'
+import bag_icon from './bag_icon.png'
 
 export const assets ={
     logo,
     twitter_icon,
     add_icon,
+    bag_icon,
     app_store,
     cross_icon,
     linkedin_icon,
     play_store,
     basket_icon,
     facebook_icon,
+    profile_icon,
     rating_starts,
     order_icon,
     add_icon_green,
+    logout_icon,
     add_icon_white,
     search_icon,
     profile_image,

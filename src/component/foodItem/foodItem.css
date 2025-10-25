@@ -13,7 +13,7 @@
 }
 
 .food_item_info{
-    padding: 30px;
+    padding: 15px;
 }
 
 .food_item_name_rating{
@@ -24,12 +24,12 @@
 }
 
 .food_item_name_rating p{
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 500;
 }
 
 .food_item_name_rating img{
-    width: 70px;
+    width: 60px;
 }
 
 .food_item_desc{
@@ -38,7 +38,7 @@
 }
 
 .food_item_price{
-    color: tomato;
+    color: orange;
     font-size: 22px;
     font-weight: 500;
     margin: 10px 0;

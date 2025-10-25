@@ -6,6 +6,9 @@ import Placeorder from "./pages/placeOrder/placeorder"
 import Footer from "./component/footer/footer"
 import { useState } from "react"
 import LoginPopup from "./component/loginpopor/loginpop"
+import Verify from "./pages/verify/verify"
+import MyOrders from "./pages/myOrder/myOrder"
+import SupportChatbot from "./component/chatbox/chatbox"
 
 
 
@@ -20,10 +23,13 @@ const App = () => {
     }
       <div className="app">
         <NavBar setShowlogin={setShowlogin} />
+        <SupportChatbot/>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/verify' element={<Verify />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/order' element={<Placeorder />} />
+          <Route path='/myorders' element={<MyOrders />} />
         </Routes>
       </div>
       <Footer />
