@@ -27,6 +27,7 @@
 .my_orders_order p  span{
     color: orange;
     font-size: smaller;
+    margin-right: 2px;
 }
 
 .my_orders_order p b{

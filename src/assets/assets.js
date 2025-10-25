@@ -20,6 +20,8 @@ import menu_3 from './menu_3.png'
 import menu_4 from './menu_4.png'
 import menu_5 from './menu_5.png'
 import menu_6 from './menu_6.png'
+import logo01 from './logo01.png'
+import logo02 from './logo02.png'
 import cross_icon from './cross_icon.png'
 import menu_7 from './menu_7.png'
 import menu_8 from './menu_8.png'
@@ -38,6 +40,8 @@ export const assets ={
     app_store,
     cross_icon,
     linkedin_icon,
+    logo01,
+    logo02,
     play_store,
     basket_icon,
     facebook_icon,

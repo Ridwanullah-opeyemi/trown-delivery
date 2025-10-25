@@ -23,12 +23,12 @@ const NavBar = ({setShowlogin}) => {
 
   return (
     <div className="navBar">
-      <Link to="/"><img src={assets.logo} className="logo" alt="" /></Link>
+      <Link to="/"><img src={assets.logo01} className="logo" alt="" /></Link>
       <ul className="navbar_menu">
         <Link to="/" onClick={()=>setMenu("home")} className={menu==="home"?"active":""}>Home</Link>
         <a href="#ExploreMenu" onClick={()=>setMenu("menu")} className={menu==="menu"?"active":""}>Menu</a>
         <a href="#appdownload" onClick={()=>setMenu("mobile-app")} className={menu==="mobile-app"?"active":""}>Mobile-app</a>
-        <a href="#footer" onClick={()=>setMenu("contact-us")} className={menu==="contact-us"?"active":""}>Contact us</a>
+        <a href="#footer" onClick={()=>setMenu("contact-us")} className={menu==="contact-us"?"active":""}>About</a>
       </ul>
       <div className="navbar-right">
         <img src={assets.search_icon} alt="" />

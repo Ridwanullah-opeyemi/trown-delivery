@@ -4,6 +4,7 @@ import { assets } from '../../assets/assets'
 import { useContext } from 'react'
 import { StoreContext } from '../../contexts/storeContexts'
 import axios from "axios"
+import { useNavigate } from 'react-router-dom'
 
 
 const LoginPopup = ({setShowlogin}) => {
@@ -43,6 +44,7 @@ const LoginPopup = ({setShowlogin}) => {
             alert(res.data.message)
         }
      }
+     const navigate = useNavigate()
      return (
     <div className="loginPopup">
         <form className="login_popup_cotainar" onSubmit={onLogin}>
@@ -57,7 +59,7 @@ const LoginPopup = ({setShowlogin}) => {
                 <button type='submit' >{currState==="Sign Up"? "Create account": "login"}</button>
                 <div className="login_popup_condition" >
                     <input type="Checkbox" required/>
-                    <p>By continuing, i agree to the terms of use & privacy policy.</p>
+                    <p onClick={()=>{navigate('privacyPolicy');setShowlogin(false)}}>By continuing, i agree to the terms of use & privacy policy.</p>
                 </div>
             </div>
             {

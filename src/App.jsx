@@ -9,6 +9,7 @@ import LoginPopup from "./component/loginpopor/loginpop"
 import Verify from "./pages/verify/verify"
 import MyOrders from "./pages/myOrder/myOrder"
 import SupportChatbot from "./component/chatbox/chatbox"
+import PrivacyPolicy from "./component/privateprolicy/private.jsx"
 
 
 
@@ -30,6 +31,7 @@ const App = () => {
           <Route path='/cart' element={<Cart />} />
           <Route path='/order' element={<Placeorder />} />
           <Route path='/myorders' element={<MyOrders />} />
+          <Route path='/privacyPolicy' element={<PrivacyPolicy />} />
         </Routes>
       </div>
       <Footer />
