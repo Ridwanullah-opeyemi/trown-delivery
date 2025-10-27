@@ -59,4 +59,12 @@
     .header-content button{
         padding: 2vw 4vw;
     }
+    .header{
+    height: 36vw;
+    margin: 5px;
+    margin-top: 30px;
+}
+.header-content{
+    bottom: 15%;
+}
 }
