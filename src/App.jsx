@@ -10,6 +10,9 @@ import Verify from "./pages/verify/verify"
 import MyOrders from "./pages/myOrder/myOrder"
 import SupportChatbot from "./component/chatbox/chatbox"
 import PrivacyPolicy from "./component/privateprolicy/private.jsx"
+import VerifyEmail from "./component/VerifyEmail.jsx"
+import ResetPasswordPage from "./component/resetpass/resetpass.jsx"
+import ForgotPasswordPage from "./component/resetpass/forgetpass.jsx"
 
 
 
@@ -32,6 +35,10 @@ const App = () => {
           <Route path='/order' element={<Placeorder />} />
           <Route path='/myorders' element={<MyOrders />} />
           <Route path='/privacyPolicy' element={<PrivacyPolicy />} />
+          <Route path="/verify/:token" element={<VerifyEmail />} />
+          <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
+          <Route path="/reset-password" element={<ResetPasswordPage />} />
+          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         </Routes>
       </div>
       <Footer />

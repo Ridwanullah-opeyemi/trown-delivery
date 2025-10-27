@@ -57,6 +57,9 @@ const LoginPopup = ({setShowlogin}) => {
                 <input type="email" name="email" value={data.email} onChange={onChangeHandler} placeholder='example@gmail.com' required />
                 <input type="password" name="password" value={data.password} onChange={onChangeHandler} placeholder='Pssword' required />
                 <button type='submit' >{currState==="Sign Up"? "Create account": "login"}</button>
+                <div className="passcon">
+                    <p>forget you passwor : <span onClick={()=>{navigate('/forgot-password');setShowlogin(false)}}>click here to reset</span></p>
+                </div>
                 <div className="login_popup_condition" >
                     <input type="Checkbox" required/>
                     <p onClick={()=>{navigate('privacyPolicy');setShowlogin(false)}}>By continuing, i agree to the terms of use & privacy policy.</p>
