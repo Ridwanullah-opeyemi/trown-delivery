@@ -36,7 +36,7 @@ const App = () => {
           <Route path='/myorders' element={<MyOrders />} />
           <Route path='/privacyPolicy' element={<PrivacyPolicy />} />
           <Route path="/verify/:token" element={<VerifyEmail />} />
-          <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
+          <Route path="/reset-password/:token" element={<ResetPasswordPage />} /> 
           <Route path="/reset-password" element={<ResetPasswordPage />} />
           <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         </Routes>
