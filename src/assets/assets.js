@@ -78,19 +78,19 @@ export const menu_list = [
         menu_image: menu_4
     },
     {
-        menu_name: "salad",
+        menu_name: "Cake",
         menu_image: menu_5
     },
     {
-        menu_name: "Sandwfich",
+        menu_name: "Vegetable",
         menu_image: menu_6
     },
     {
-        menu_name: "Sanwich",
+        menu_name: "Pasta",
         menu_image: menu_7
     },
     {
-        menu_name: "Sandwch",
+        menu_name: "Noodles",
         menu_image: menu_8
     }
 ]

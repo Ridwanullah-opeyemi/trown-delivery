@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
+import {useContext} from 'react'
 import { useNavigate } from 'react-router-dom';
 import './ResetPasswordPage.css';
-
+import { StoreContext } from '../../contexts/storeContexts';
 
 
 const ForgotPasswordPage = () => {
+    const {url} = useContext(StoreContext)
     const [email, setEmail] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
     const navigate = useNavigate();
-    const API_URL = 'http://localhost:4002/api/user/forgotpassword';
+    const API_URL = `${url}/api/user/forgotpassword`;
 
     const handleSubmit = async (e) => {
         e.preventDefault();

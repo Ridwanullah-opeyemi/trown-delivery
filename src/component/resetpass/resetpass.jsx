@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import {useContext} from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import './ResetPasswordPage.css';
+import { StoreContext } from '../../contexts/storeContexts';
 
  
 const ResetPasswordPage = () => {
     const { token } = useParams(); 
     const navigate = useNavigate();
+    const { url } = useContext(StoreContext)
 
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -14,7 +17,7 @@ const ResetPasswordPage = () => {
     const [success, setSuccess] = useState('');
     const [showPassword, setShowPassword] = useState(false);
 
-    const API_BASE_URL = 'http://localhost:4002/api/user/passwordreset';
+    const API_BASE_URL = `${url}/api/user/passwordreset`;
     const API_URL = `${API_BASE_URL}/${token}`;
 
 

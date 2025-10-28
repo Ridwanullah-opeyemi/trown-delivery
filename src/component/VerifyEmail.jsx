@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import { StoreContext } from '../contexts/storeContexts';
 
-const API_BASE_URL = "http://localhost:4002/api/user/verify-email";
 
-// --- Inline SVG Icons ---
-// Icons are defined here and accept dynamic classes for size, color, and animation.
 const LoaderIcon = ({ className }) => (
     <svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
@@ -30,8 +28,10 @@ const XCircleIcon = ({ className }) => (
 // --- Main Component ---
 
 const VerifyEmail = () => {
+    const { url } = useContext(StoreContext); 
+    const API_BASE_URL = `${url}/api/user/verify-email`;
+
     const { token } = useParams();
-    // Status can be 'loading', 'success', or 'error'
     const [status, setStatus] = useState('loading');
     const [message, setMessage] = useState('Verifying your email address...');
 
@@ -59,7 +59,6 @@ const VerifyEmail = () => {
                     setMessage(data.message || 'Success! Your email has been verified. You can now log in.');
                 } else {
                     setStatus('error');
-                    // Check for a specific expiration message from the backend (as we discussed)
                     if (data.message && data.message.includes('expired')) {
                          setMessage('Verification link has expired. Please request a new one below.');
                     } else {
@@ -74,7 +73,7 @@ const VerifyEmail = () => {
         };
 
         verifyAccount();
-    }, [token]);
+    }, [token, API_BASE_URL]); 
 
     const renderIcon = () => {
         const baseClasses = "w-16 h-16";
@@ -87,9 +86,8 @@ const VerifyEmail = () => {
         }
     };
 
-    // Helper to dynamically set the title color based on status
     const getTitleClasses = () => {
-        let colorClass = 'text-orange-600'; // Default for loading
+        let colorClass = 'text-orange-600'; 
         if (status === 'success') {
             colorClass = 'text-green-600';
         } else if (status === 'error') {
