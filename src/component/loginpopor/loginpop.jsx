@@ -1,7 +1,6 @@
-import { useState } from 'react'
-import './login.css'
+import { useState, useContext } from 'react'
+import './login.css' 
 import { assets } from '../../assets/assets'
-import { useContext } from 'react'
 import { StoreContext } from '../../contexts/storeContexts'
 import axios from "axios"
 import { useNavigate } from 'react-router-dom'
@@ -9,9 +8,11 @@ import { useNavigate } from 'react-router-dom'
 
 const LoginPopup = ({ setShowlogin }) => {
     const [currState, setCurrState] = useState("login")
-    const [passwordVisible, setPasswordVisible] = useState(false); // New state
+    const [passwordVisible, setPasswordVisible] = useState(false);
+    const [isLoading, setIsLoading] = useState(false); 
+    const [statusMessage, setStatusMessage] = useState({ text: '', type: '' }); 
 
-    const { url, setToken } = useContext(StoreContext)
+    const { url, setToken } = useContext(StoreContext) 
     const [data, setData] = useState({
         name: "",
         email: "",
@@ -26,6 +27,9 @@ const LoginPopup = ({ setShowlogin }) => {
 
     const onLogin = async (e) => {
         e.preventDefault()
+        setIsLoading(true); 
+        setStatusMessage({ text: '', type: '' });
+
         let newUrl = url;
         if (currState === "login") {
             newUrl += "/api/user/login"
@@ -33,17 +37,29 @@ const LoginPopup = ({ setShowlogin }) => {
             newUrl += "/api/user/register"
         }
 
-        console.log(newUrl);
+        console.log("Attempting API call to:", newUrl);
 
-        const res = await axios.post(newUrl, data);
-        if (res.data.success) {
-            setToken(res.data.token);
-            localStorage.setItem("token", res.data.token)
-            setShowlogin(false)
-            alert(res.data.message)
-        }
-        else {
-            alert(res.data.message)
+        try {
+            const res = await axios.post(newUrl, data);
+
+            if (res.data.success) {
+                setToken(res.data.token);
+                localStorage.setItem("token", res.data.token)
+                setStatusMessage({ text: res.data.message || "Authentication successful!", type: 'success' }); 
+                
+                setTimeout(() => {
+                    setShowlogin(false);
+                }, 500); 
+
+            } else {
+                setStatusMessage({ text: res.data.message || "Authentication failed. Please check your credentials.", type: 'error' });
+            }
+        } catch (error) {
+            const errorMessage = error.response?.data?.message || "Could not connect to server. Check network connection.";
+            setStatusMessage({ text: errorMessage, type: 'error' });
+            console.error("Login/Register API Error:", error);
+        } finally {
+            setIsLoading(false);
         }
     }
 
@@ -58,10 +74,16 @@ const LoginPopup = ({ setShowlogin }) => {
         <div className="loginPopup">
             <form className="login_popup_cotainar" onSubmit={onLogin}>
                 <div className="login_popup_title">
-                    <h2>{currState}</h2>
-                    <img onClick={() => setShowlogin(false)} src={assets.cross_icon} alt="" />
+                    <h2>{currState === "login" ? "Login" : "Sign Up"}</h2>
+                    <img onClick={() => setShowlogin(false)} src={assets.cross_icon} alt="Close" />
                 </div>
                 <div className="login_popup_inputs">
+                    {statusMessage.text && (
+                        <div className={`status_message ${statusMessage.type === 'success' ? 'success' : 'error'}`}>
+                            {statusMessage.text}
+                        </div>
+                    )}
+
                     {currState === "login" ? <></> : <input type="text" name="name" value={data.name} onChange={onChangeHandler} placeholder='Your name' required />}
                     <input type="email" name="email" value={data.email} onChange={onChangeHandler} placeholder='example@gmail.com' required />
 
@@ -86,7 +108,16 @@ const LoginPopup = ({ setShowlogin }) => {
                         </button>
                     </div>
 
-                    <button type='submit' >{currState === "Sign Up" ? "Create account" : "login"}</button>
+                    <button 
+                        type='submit' 
+                        disabled={isLoading} 
+                        className={isLoading ? 'loading-btn' : ''} 
+                    >
+                        {isLoading 
+                            ? 'Loading...' 
+                            : (currState === "Sign Up" ? "Create account" : "Login")
+                        }
+                    </button>
 
 
                 </div>

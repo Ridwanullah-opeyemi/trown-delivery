@@ -1,6 +1,10 @@
 .loginPopup {
-    position: absolute;
-    z-index: 1;
+    position: fixed;
+    /* Changed to fixed for better overlay behavior */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    /* High z-index to overlay everything */
     width: 100%;
     height: 100%;
     background-color: #00000090;
@@ -9,7 +13,8 @@
 
 .login_popup_cotainar {
     place-self: center;
-    width: max(23vw, 33px);
+    width: max(23vw, 300px);
+    /* Adjusted min width */
     color: #808080;
     background-color: #ffffff;
     display: flex;
@@ -46,7 +51,8 @@
 
 .login_popup_inputs input {
     outline: none;
-    border: 1px solid;
+    border: 1px solid #c9c9c9;
+    /* Added specific border color */
     padding: 10px;
     border-radius: 4px;
 }
@@ -59,6 +65,21 @@
     background-color: orange;
     font-size: 15px;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login_popup_cotainar button:disabled {
+    background-color: #ff9f4f;
+    /* Lighter orange when disabled */
+    cursor: not-allowed;
+}
+
+.loading-btn {
+    background-color: #fa5a00 !important;
+    /* Slightly darker orange for visible loading state */
+    opacity: 0.8;
+    pointer-events: none;
+    /* Ensure no extra clicks */
 }
 
 .login_popup_condition {
@@ -81,67 +102,88 @@
 
 .showpasscon {
     display: flex;
-    border: solid 1px;
+    border: solid 1px #c9c9c9;
     gap: 10px;
     align-items: center;
-    display: flex;
     justify-content: space-between;
     flex-direction: row;
     border-radius: 4px;
+    padding: 0;
 }
 
 #passinp {
-    padding: 8px;
+    padding: 10px;
     width: 80%;
     border: none;
     outline: none;
+    box-shadow: none;
 }
 
 .passshowbtn {
-    padding: 8px 12px;
-    cursor: pointer;
+    padding: 10px 12px;
+    background-color: #f0f0f0;
+    color: #333;
+    border-radius: 0 4px 4px 0;
+    transition: background-color 0.2s;
+}
+
+.passshowbtn:hover {
+    background-color: #e0e0e0;
 }
 
 
+/* Status Message Styling */
+.status_message {
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.status_message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status_message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
 
 
 @media (max-width: 1050px) {
-
     .login_popup_cotainar {
-        width: max(35vw, 50px);
+        width: max(35vw, 350px);
         gap: 25px;
         padding: 25px 30px;
     }
-
 }
 
 @media (max-width: 900px) {
-
     .login_popup_cotainar {
-        width: max(40vw, 65px);
+        width: max(40vw, 300px);
         gap: 25px;
         padding: 23px 28px;
     }
-
 }
 
 @media (max-width: 750px) {
-
     .login_popup_cotainar {
-        width: max(50vw, 78px);
+        width: max(50vw, 300px);
         gap: 25px;
         padding: 20px 25px;
     }
-
 }
 
-
 @media (max-width: 500px) {
-
     .login_popup_cotainar {
         width: 85%;
+        min-width: 280px;
         gap: 25px;
         padding: 25px 30px;
     }
-
 }
